@@ -21,3 +21,15 @@ class PinsController < ApplicationController
     end
 
 end
+
+
+#https://us-east-api.stream-io-api.com/api/v1.0/feed/carrerfy_aggregated/1/?api_key=urjm7nx58vty
+#
+#"https://us-east-api.stream-io-api.com/api/v1.0/feed/aggregated/123/?api_key=urjm7nx58vty"
+#
+#{
+#  results: [],
+#  next: '/api/v1.0/feed/<< feed_group >>/<< feed_id >>/?api_key=<< api_key >>&amp;id_lt=<< next_activity_id >>&amp;limit=<< activity_limit >>'
+#}
+#
+                    

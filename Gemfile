@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'rails', '5.2.2'
+ruby '2.6.5'
+
+gem 'rails', '6.0.2.1'
+gem 'pg', '>= 0.18', '< 2.0'
 gem 'sass-rails', '~> 5.0.7'
 gem 'turbolinks'
 gem 'coffee-rails'
@@ -10,12 +14,21 @@ gem 'devise'
 gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'rails_layout'
-gem "pg", "~> 0.18" 
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
-group :development do
+gem 'dotenv-rails', groups: [:development, :test]
+
+group :development, :test do
   gem 'listen', '~> 3.1.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+
 end
 
-ruby "2.5.5"
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+

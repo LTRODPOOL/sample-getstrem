@@ -9,13 +9,19 @@ class FeedsController < ApplicationController
   end
 
   def flat
-    feed = StreamRails.feed_manager.get_news_feeds(current_user.id)[:timeline]
+    feed = StreamRails.feed_manager.get_news_feeds(current_user.id)[:flat]
     results = feed.get()['results']
     @activities = @enricher.enrich_activities(results)
   end
 
   def aggregated
-    feed = StreamRails.feed_manager.get_news_feeds(current_user.id)[:timeline_aggregated]
+    feed = StreamRails.feed_manager.get_news_feeds(current_user.id)[:aggregated]
+    results = feed.get()['results']
+    @activities = @enricher.enrich_aggregated_activities(results)
+  end
+
+  def notification
+    feed = StreamRails.feed_manager.get_notification_feed(current_user.id)
     results = feed.get()['results']
     @activities = @enricher.enrich_aggregated_activities(results)
   end
