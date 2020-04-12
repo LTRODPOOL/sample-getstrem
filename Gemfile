@@ -15,6 +15,7 @@ gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'rails_layout'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'webpacker', '~> 5.x'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
